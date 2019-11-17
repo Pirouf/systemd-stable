@@ -271,3 +271,6 @@ NetworkEmulatorDelayJitterSec=
 NetworkEmulatorLossRate=
 NetworkEmulatorDuplicateRate=
 NetworkEmulatorPacketLimit=
+TokenBufferFilterRate=
+TokenBufferFilterBurst=
+TokenBufferFilterLatencySec=
