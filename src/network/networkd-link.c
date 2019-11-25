@@ -2599,7 +2599,7 @@ static int link_drop_config(Link *link) {
 }
 
 static int link_configure_qdiscs(Link *link) {
-        QDiscs *qdisc;
+        QDisc *qdisc;
         Iterator i;
         int r;
 
@@ -2615,7 +2615,7 @@ static int link_configure_qdiscs(Link *link) {
         if (link->qdisc_messages == 0)
                 link->qdiscs_configured = true;
         else
-                log_link_debug(link, "Configuring QDiscs");
+                log_link_debug(link, "Configuring queuing discipline (qdisc)");
 
         return 0;
 }
