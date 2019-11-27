@@ -274,3 +274,4 @@ NetworkEmulatorPacketLimit=
 TokenBufferFilterRate=
 TokenBufferFilterBurst=
 TokenBufferFilterLatencySec=
+StochasticFairnessQueueingPerturbPeriodSec=
