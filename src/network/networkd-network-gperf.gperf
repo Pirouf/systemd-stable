@@ -281,6 +281,11 @@ TrafficControlQueueingDiscipline.ControlledDelayTargetSec,                   con
 TrafficControlQueueingDiscipline.ControlledDelayIntervalSec,                 config_parse_tc_controlled_delay_usec,                       0, 0
 TrafficControlQueueingDiscipline.ControlledDelayCEThresholdSec,              config_parse_tc_controlled_delay_usec,                       0, 0
 TrafficControlQueueingDiscipline.ControlledDelayECN,                         config_parse_tc_controlled_delay_bool,                       0, 0
+TrafficControlQueueingDiscipline.EarliestTxTimeFirstClockid,                 config_parse_tc_etf_clockid,                                 0, 0
+TrafficControlQueueingDiscipline.EarliestTxTimeFirstDelta,                   config_parse_tc_etf_delay_nsec,                              0, 0
+TrafficControlQueueingDiscipline.EarliestTxTimeFirstDeadline,                config_parse_tc_etf_bool,                                    0, 0
+TrafficControlQueueingDiscipline.EarliestTxTimeFirstOffload,                 config_parse_tc_etf_bool,                                    0, 0
+TrafficControlQueueingDiscipline.EarliestTxTimeFirstSkipsock,                config_parse_tc_etf_bool,                                    0, 0
 /* backwards compatibility: do not add new entries to this section */
 Network.IPv4LL,                         config_parse_ipv4ll,                             0,                             offsetof(Network, link_local)
 DHCP.ClientIdentifier,                  config_parse_dhcp_client_identifier,             0,                             offsetof(Network, dhcp_client_identifier)

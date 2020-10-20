@@ -734,6 +734,10 @@ static const NLTypeSystem rtnl_nexthop_type_system = {
        .types = rtnl_nexthop_types,
 };
 
+static const NLType rtnl_tca_option_data_etf_types[] = {
+        [TCA_ETF_PARMS]   = { .size = sizeof(struct tc_etf_qopt) },
+};
+
 static const NLType rtnl_tca_option_data_codel_types[] = {
         [TCA_CODEL_TARGET]        = { .type = NETLINK_TYPE_U32 },
         [TCA_CODEL_LIMIT]         = { .type = NETLINK_TYPE_U32 },
@@ -784,6 +788,7 @@ static const char* const nl_union_tca_option_data_table[] = {
         [NL_UNION_TCA_OPTION_DATA_FQ] = "fq",
         [NL_UNION_TCA_OPTION_DATA_FQ_CODEL] = "fq_codel",
         [NL_UNION_TCA_OPTION_DATA_TBF] = "tbf",
+        [NL_UNION_TCA_OPTION_DATA_ETF] = "etf",
 };
 
 DEFINE_STRING_TABLE_LOOKUP(nl_union_tca_option_data, NLUnionTCAOptionData);
@@ -797,6 +802,8 @@ static const NLTypeSystem rtnl_tca_option_data_type_systems[] = {
                                                    .types = rtnl_tca_option_data_fq_codel_types },
         [NL_UNION_TCA_OPTION_DATA_TBF] =         { .count = ELEMENTSOF(rtnl_tca_option_data_tbf_types),
                                                    .types = rtnl_tca_option_data_tbf_types },
+        [NL_UNION_TCA_OPTION_DATA_ETF] =         { .count = ELEMENTSOF(rtnl_tca_option_data_etf_types),
+                                                   .types = rtnl_tca_option_data_etf_types },
 };
 
 static const NLTypeSystemUnion rtnl_tca_option_data_type_system_union = {
