@@ -30,6 +30,7 @@ typedef enum QDiscKind {
         QDISC_KIND_SFQ,
         QDISC_KIND_TBF,
         QDISC_KIND_TEQL,
+        QDISC_KIND_ETF,
         _QDISC_KIND_MAX,
         _QDISC_KIND_INVALID = -1,
 } QDiscKind;
@@ -105,3 +106,4 @@ CONFIG_PARSER_PROTOTYPE(config_parse_qdisc_handle);
 #include "sfq.h"
 #include "tbf.h"
 #include "teql.h"
+#include "etf.h"

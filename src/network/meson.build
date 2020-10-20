@@ -153,6 +153,8 @@ sources = files('''
         tc/sfq.h
         tc/tbf.c
         tc/tbf.h
+        tc/etf.c
+        tc/etf.h
         tc/tc-util.c
         tc/tc-util.h
         tc/tc.c
