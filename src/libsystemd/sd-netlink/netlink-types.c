@@ -734,6 +734,29 @@ static const NLTypeSystem rtnl_nexthop_type_system = {
        .types = rtnl_nexthop_types,
 };
 
+static const NLType rtnl_tca_option_data_taprio_sched_types[] = {
+        [TCA_TAPRIO_SCHED_ENTRY_INDEX]          = { .type = NETLINK_TYPE_U32 },
+        [TCA_TAPRIO_SCHED_ENTRY_CMD]            = { .type = NETLINK_TYPE_U8 },
+        [TCA_TAPRIO_SCHED_ENTRY_GATE_MASK]      = { .type = NETLINK_TYPE_U32 },
+        [TCA_TAPRIO_SCHED_ENTRY_INTERVAL]       = { .type = NETLINK_TYPE_U32 },
+};
+
+static const NLTypeSystem rtnl_tca_option_data_taprio_sched_type_system = {
+        .count = ELEMENTSOF(rtnl_tca_option_data_taprio_sched_types),
+        .types = rtnl_tca_option_data_taprio_sched_types,
+};
+
+static const NLType rtnl_tca_option_data_taprio_types[] = {
+        [TCA_TAPRIO_ATTR_PRIOMAP]                       = { .size = sizeof(struct tc_mqprio_qopt) },
+        [TCA_TAPRIO_ATTR_SCHED_ENTRY_LIST]              = { .type = NETLINK_TYPE_NESTED, .type_system = &rtnl_tca_option_data_taprio_sched_type_system },
+        [TCA_TAPRIO_ATTR_SCHED_BASE_TIME]               = { .type = NETLINK_TYPE_S64 },
+        [TCA_TAPRIO_ATTR_SCHED_CLOCKID]                 = { .type = NETLINK_TYPE_U32 },
+        [TCA_TAPRIO_ATTR_SCHED_CYCLE_TIME]              = { .type = NETLINK_TYPE_S64 },
+        [TCA_TAPRIO_ATTR_SCHED_CYCLE_TIME_EXTENSION]    = { .type = NETLINK_TYPE_S64 },
+        [TCA_TAPRIO_ATTR_FLAGS]                         = { .type = NETLINK_TYPE_U32 },
+        [TCA_TAPRIO_ATTR_TXTIME_DELAY]                  = { .type = NETLINK_TYPE_S32 },
+};
+
 static const NLType rtnl_tca_option_data_etf_types[] = {
         [TCA_ETF_PARMS]   = { .size = sizeof(struct tc_etf_qopt) },
 };
@@ -789,6 +812,7 @@ static const char* const nl_union_tca_option_data_table[] = {
         [NL_UNION_TCA_OPTION_DATA_FQ_CODEL] = "fq_codel",
         [NL_UNION_TCA_OPTION_DATA_TBF] = "tbf",
         [NL_UNION_TCA_OPTION_DATA_ETF] = "etf",
+        [NL_UNION_TCA_OPTION_DATA_TAPRIO] = "taprio",
 };
 
 DEFINE_STRING_TABLE_LOOKUP(nl_union_tca_option_data, NLUnionTCAOptionData);
@@ -804,6 +828,8 @@ static const NLTypeSystem rtnl_tca_option_data_type_systems[] = {
                                                    .types = rtnl_tca_option_data_tbf_types },
         [NL_UNION_TCA_OPTION_DATA_ETF] =         { .count = ELEMENTSOF(rtnl_tca_option_data_etf_types),
                                                    .types = rtnl_tca_option_data_etf_types },
+        [NL_UNION_TCA_OPTION_DATA_TAPRIO] =      { .count = ELEMENTSOF(rtnl_tca_option_data_taprio_types),
+                                                   .types = rtnl_tca_option_data_taprio_types },
 };
 
 static const NLTypeSystemUnion rtnl_tca_option_data_type_system_union = {
