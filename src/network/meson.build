@@ -121,6 +121,8 @@ sources = files('''
         tc/tbf.h
         tc/etf.c
         tc/etf.h
+        tc/taprio.c
+        tc/taprio.h
         tc/tc-util.c
         tc/tc-util.h
 '''.split())

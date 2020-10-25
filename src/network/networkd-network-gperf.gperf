@@ -286,6 +286,16 @@ TrafficControlQueueingDiscipline.EarliestTxTimeFirstDelta,                   con
 TrafficControlQueueingDiscipline.EarliestTxTimeFirstDeadline,                config_parse_tc_etf_bool,                                    0, 0
 TrafficControlQueueingDiscipline.EarliestTxTimeFirstOffload,                 config_parse_tc_etf_bool,                                    0, 0
 TrafficControlQueueingDiscipline.EarliestTxTimeFirstSkipsock,                config_parse_tc_etf_bool,                                    0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperNumtc,                   config_parse_tc_taprio_num_tc,                               0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperPriomap,                 config_parse_tc_taprio_priomap,                              0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperQueues,                  config_parse_tc_taprio_queuemap,                             0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperSchedEntry,              config_parse_tc_taprio_sched_entry,                          0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperBasetime,                config_parse_tc_taprio_base_time,                            0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperCycletime,               config_parse_tc_taprio_cycle_time,                           0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperCycletimeExtension,      config_parse_tc_taprio_cycle_time,                           0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperTxTimeMode,              config_parse_tc_taprio_flags,                                0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperTxTimeDelay,             config_parse_tc_taprio_txtime_delay,                         0, 0
+TrafficControlQueueingDiscipline.TimeAwarePrioShaperClockid,                 config_parse_tc_taprio_clockid,                              0, 0
 /* backwards compatibility: do not add new entries to this section */
 Network.IPv4LL,                         config_parse_ipv4ll,                             0,                             offsetof(Network, link_local)
 DHCP.ClientIdentifier,                  config_parse_dhcp_client_identifier,             0,                             offsetof(Network, dhcp_client_identifier)
